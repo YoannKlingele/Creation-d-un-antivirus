@@ -8,22 +8,22 @@ def hasing(cwd):
     
     hasher = hashlib.sha256()
     with open(str(cwd), 'rb') as afile:
-        buf = afile.read(BLOCKSIZE)
-        while len(buf) > 0:
+        buffer = afile.read(BLOCKSIZE)
+        while len(buffer) > 0:
                     
-            hasher.update(buf)
-            buf = afile.read(BLOCKSIZE)
+            hasher.update(buffer)
+            buffer = afile.read(BLOCKSIZE)
         mon_hash = open("hash.txt","w")
                             
         mon_hash.write(hasher.hexdigest())
         mon_hash.close()
                 
             
-        f1=open("hash.txt","r")
-        f2=open("bdd.txt","r")
+        fichier1=open("hash.txt","r")
+        fichier2=open("bdd.txt","r")
 
-        for line1 in f1:
-            for line2 in f2:
+        for line1 in fichier1:
+            for line2 in fichier2:
                 if line1==line2:
                     repcor = True
                     clean = False
