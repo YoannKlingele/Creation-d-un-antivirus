@@ -59,5 +59,6 @@ try:
         if clean == True :
             print("Aucun virus detecté")
     print("Tous les fichiers ont étés traités")
+    os.remove("hash.txt")
 except FileNotFoundError :
     print("Analyse impossible : Ce chemin de fichier/dossier n'existe pas")
